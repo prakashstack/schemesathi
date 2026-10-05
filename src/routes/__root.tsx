@@ -10,7 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+import { reportRuntimeError } from "../lib/error-reporting";
 import { Layout } from "@/components/Layout";
 import { I18nProvider } from "@/hooks/useI18n";
 import { LocalStateProvider } from "@/hooks/useLocalState";
@@ -38,10 +38,9 @@ function NotFoundComponent() {
 }
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
-  console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    reportRuntimeError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
   return (
@@ -91,7 +90,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&family=Noto+Sans+Gujarati:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600&display=swap" },
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "apple-touch-icon", href: "/favicon.svg" },
     ],
   }),
   shellComponent: RootShell,
