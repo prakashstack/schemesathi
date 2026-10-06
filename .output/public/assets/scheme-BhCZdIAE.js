@@ -1,1 +1,0 @@
-var e=[`none`,`below_10`,`class_10`,`class_12`,`diploma`,`graduate`,`postgraduate`,`doctorate`];export{e as t};

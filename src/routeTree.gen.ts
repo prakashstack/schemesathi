@@ -10,31 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as CentralRouteImport } from './routes/central'
-import { Route as EligibilityRouteImport } from './routes/eligibility'
 import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as ResultsRouteImport } from './routes/results'
-import { Route as SavedRouteImport } from './routes/saved'
-import { Route as CategoriesIndexRouteImport } from './routes/categories.index'
-import { Route as CategoriesIdRouteImport } from './routes/categories.$id'
-import { Route as SchemesIndexRouteImport } from './routes/schemes.index'
-import { Route as SchemesIdRouteImport } from './routes/schemes.$id'
-import { Route as StatesIndexRouteImport } from './routes/states.index'
-import { Route as StatesGujaratRouteImport } from './routes/states.gujarat'
+import { Route as PlacesIndexRouteImport } from './routes/places.index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CentralRoute = CentralRouteImport.update({
-  id: '/central',
-  path: '/central',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EligibilityRoute = EligibilityRouteImport.update({
-  id: '/eligibility',
-  path: '/eligibility',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -42,148 +23,40 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ResultsRoute = ResultsRouteImport.update({
-  id: '/results',
-  path: '/results',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SavedRoute = SavedRouteImport.update({
-  id: '/saved',
-  path: '/saved',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CategoriesIndexRoute = CategoriesIndexRouteImport.update({
-  id: '/categories/',
-  path: '/categories/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CategoriesIdRoute = CategoriesIdRouteImport.update({
-  id: '/categories/$id',
-  path: '/categories/$id',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SchemesIndexRoute = SchemesIndexRouteImport.update({
-  id: '/schemes/',
-  path: '/schemes/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SchemesIdRoute = SchemesIdRouteImport.update({
-  id: '/schemes/$id',
-  path: '/schemes/$id',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const StatesIndexRoute = StatesIndexRouteImport.update({
-  id: '/states/',
-  path: '/states/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const StatesGujaratRoute = StatesGujaratRouteImport.update({
-  id: '/states/gujarat',
-  path: '/states/gujarat',
+const PlacesIndexRoute = PlacesIndexRouteImport.update({
+  id: '/places/',
+  path: '/places/',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/central': typeof CentralRoute
-  '/eligibility': typeof EligibilityRoute
   '/privacy': typeof PrivacyRoute
-  '/results': typeof ResultsRoute
-  '/saved': typeof SavedRoute
-  '/categories/$id': typeof CategoriesIdRoute
-  '/schemes/$id': typeof SchemesIdRoute
-  '/states/gujarat': typeof StatesGujaratRoute
-  '/categories/': typeof CategoriesIndexRoute
-  '/schemes/': typeof SchemesIndexRoute
-  '/states/': typeof StatesIndexRoute
+  '/places/': typeof PlacesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/central': typeof CentralRoute
-  '/eligibility': typeof EligibilityRoute
   '/privacy': typeof PrivacyRoute
-  '/results': typeof ResultsRoute
-  '/saved': typeof SavedRoute
-  '/categories/$id': typeof CategoriesIdRoute
-  '/schemes/$id': typeof SchemesIdRoute
-  '/states/gujarat': typeof StatesGujaratRoute
-  '/categories': typeof CategoriesIndexRoute
-  '/schemes': typeof SchemesIndexRoute
-  '/states': typeof StatesIndexRoute
+  '/places': typeof PlacesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/central': typeof CentralRoute
-  '/eligibility': typeof EligibilityRoute
   '/privacy': typeof PrivacyRoute
-  '/results': typeof ResultsRoute
-  '/saved': typeof SavedRoute
-  '/categories/$id': typeof CategoriesIdRoute
-  '/schemes/$id': typeof SchemesIdRoute
-  '/states/gujarat': typeof StatesGujaratRoute
-  '/categories/': typeof CategoriesIndexRoute
-  '/schemes/': typeof SchemesIndexRoute
-  '/states/': typeof StatesIndexRoute
+  '/places/': typeof PlacesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/central'
-    | '/eligibility'
-    | '/privacy'
-    | '/results'
-    | '/saved'
-    | '/categories/$id'
-    | '/schemes/$id'
-    | '/states/gujarat'
-    | '/categories/'
-    | '/schemes/'
-    | '/states/'
+  fullPaths: '/' | '/privacy' | '/places/'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/central'
-    | '/eligibility'
-    | '/privacy'
-    | '/results'
-    | '/saved'
-    | '/categories/$id'
-    | '/schemes/$id'
-    | '/states/gujarat'
-    | '/categories'
-    | '/schemes'
-    | '/states'
-  id:
-    | '__root__'
-    | '/'
-    | '/central'
-    | '/eligibility'
-    | '/privacy'
-    | '/results'
-    | '/saved'
-    | '/categories/$id'
-    | '/schemes/$id'
-    | '/states/gujarat'
-    | '/categories/'
-    | '/schemes/'
-    | '/states/'
+  to: '/' | '/privacy' | '/places'
+  id: '__root__' | '/' | '/privacy' | '/places/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  CentralRoute: typeof CentralRoute
-  EligibilityRoute: typeof EligibilityRoute
   PrivacyRoute: typeof PrivacyRoute
-  ResultsRoute: typeof ResultsRoute
-  SavedRoute: typeof SavedRoute
-  CategoriesIdRoute: typeof CategoriesIdRoute
-  SchemesIdRoute: typeof SchemesIdRoute
-  StatesGujaratRoute: typeof StatesGujaratRoute
-  CategoriesIndexRoute: typeof CategoriesIndexRoute
-  SchemesIndexRoute: typeof SchemesIndexRoute
-  StatesIndexRoute: typeof StatesIndexRoute
+  PlacesIndexRoute: typeof PlacesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -195,20 +68,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/central': {
-      id: '/central'
-      path: '/central'
-      fullPath: '/central'
-      preLoaderRoute: typeof CentralRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/eligibility': {
-      id: '/eligibility'
-      path: '/eligibility'
-      fullPath: '/eligibility'
-      preLoaderRoute: typeof EligibilityRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
@@ -216,60 +75,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/results': {
-      id: '/results'
-      path: '/results'
-      fullPath: '/results'
-      preLoaderRoute: typeof ResultsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/saved': {
-      id: '/saved'
-      path: '/saved'
-      fullPath: '/saved'
-      preLoaderRoute: typeof SavedRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/categories/': {
-      id: '/categories/'
-      path: '/categories'
-      fullPath: '/categories/'
-      preLoaderRoute: typeof CategoriesIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/categories/$id': {
-      id: '/categories/$id'
-      path: '/categories/$id'
-      fullPath: '/categories/$id'
-      preLoaderRoute: typeof CategoriesIdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/schemes/': {
-      id: '/schemes/'
-      path: '/schemes'
-      fullPath: '/schemes/'
-      preLoaderRoute: typeof SchemesIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/schemes/$id': {
-      id: '/schemes/$id'
-      path: '/schemes/$id'
-      fullPath: '/schemes/$id'
-      preLoaderRoute: typeof SchemesIdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/states/': {
-      id: '/states/'
-      path: '/states'
-      fullPath: '/states/'
-      preLoaderRoute: typeof StatesIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/states/gujarat': {
-      id: '/states/gujarat'
-      path: '/states/gujarat'
-      fullPath: '/states/gujarat'
-      preLoaderRoute: typeof StatesGujaratRouteImport
+    '/places/': {
+      id: '/places/'
+      path: '/places'
+      fullPath: '/places/'
+      preLoaderRoute: typeof PlacesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -277,17 +87,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  CentralRoute: CentralRoute,
-  EligibilityRoute: EligibilityRoute,
   PrivacyRoute: PrivacyRoute,
-  ResultsRoute: ResultsRoute,
-  SavedRoute: SavedRoute,
-  CategoriesIdRoute: CategoriesIdRoute,
-  SchemesIdRoute: SchemesIdRoute,
-  StatesGujaratRoute: StatesGujaratRoute,
-  CategoriesIndexRoute: CategoriesIndexRoute,
-  SchemesIndexRoute: SchemesIndexRoute,
-  StatesIndexRoute: StatesIndexRoute,
+  PlacesIndexRoute: PlacesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

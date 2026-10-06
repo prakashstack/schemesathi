@@ -32,6 +32,5 @@ export function removeKey(key: string): void {
 }
 
 export const STORAGE_KEYS = {
-  profile: "schemesathi.profile.v1",
-  saved: "schemesathi.saved.v1",
+  saved: "nearby-explorer.favorites.v1",
 } as const;

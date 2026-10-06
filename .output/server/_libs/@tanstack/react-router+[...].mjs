@@ -1,26 +1,9 @@
 import { n as __toESM, t as __commonJSMin } from "../../_runtime.mjs";
-import { n as require_react } from "../@radix-ui/react-compose-refs+[...].mjs";
-import { r as require_jsx_runtime } from "../react+tanstack__react-query.mjs";
+import { n as require_jsx_runtime, r as require_react } from "../react+tanstack__react-query.mjs";
 import { i as parseHref, r as normalizeProtocolRelative } from "../tanstack__history.mjs";
 import { Buffer } from "node:buffer";
 import { PassThrough, Readable } from "node:stream";
 //#region node_modules/@tanstack/router-core/dist/esm/not-found.js
-/**
-* Create a not-found error object recognized by TanStack Router.
-*
-* Throw this from loaders/actions to trigger the nearest `notFoundComponent`.
-* Use `routeId` to target a specific route's not-found boundary. If `throw`
-* is true, the error is thrown instead of returned.
-*
-* @param options Optional settings including `routeId`, `headers`, and `throw`.
-* @returns A not-found error object that can be thrown or returned.
-* @link https://tanstack.com/router/latest/docs/router/framework/react/api/router/notFoundFunction
-*/
-function notFound(options = {}) {
-	options.isNotFound = true;
-	if (options.throw) throw options;
-	return options;
-}
 /** Determine if a value is a TanStack Router not-found error. */
 function isNotFound(obj) {
 	return obj?.isNotFound === true;
@@ -3538,7 +3521,6 @@ var BaseRootRoute = class extends BaseRoute {
 };
 //#endregion
 //#region node_modules/unenv/dist/runtime/polyfill/globalthis.mjs
-var import_jsx_runtime = require_jsx_runtime();
 var globalthis_default = globalThis;
 //#endregion
 //#region node_modules/seroval/dist/index.js
@@ -6334,6 +6316,7 @@ function fromJSON(source, options = {}) {
 }
 //#endregion
 //#region node_modules/@tanstack/react-router/dist/esm/CatchBoundary.js
+var import_jsx_runtime = require_jsx_runtime();
 var CatchBoundary = class extends import_react.Component {
 	constructor(..._args) {
 		super(..._args);
@@ -17762,4 +17745,4 @@ var renderRouterToStream = async ({ request, router, responseHeaders, children }
 	}
 };
 //#endregion
-export { createInlineCssStyleAsset as A, decodePath as B, createStream as C, toCrossJSONAsync as D, isStream as E, waitForReason as F, rootRouteId as G, isPromise as H, _getRenderedMatches as I, isNotFound as K, executeRewriteInput as L, getStylesheetHref as M, resolveManifestAssetLink as N, toCrossJSONStream as O, resolveManifestCssLink as P, invariant as R, createPlugin as S, fromJSON as T, dehydrateSsrMatchId as U, isDangerousProtocol as V, isRedirect as W, createFileRoute as _, isSsrResponse as a, useNavigate as b, stripSsrResponseBody as c, Scripts as d, HeadContent as f, lazyRouteComponent as g, Outlet as h, disposeSsrResponse as i, getScriptPreloadAttrs as j, createInlineCssPlaceholderAsset as k, createHydrationScripts as l, createRouter as m, bindSsrResponseToRequest as n, normalizeSsrResponse as o, RouterProvider as p, notFound as q, defineHandlerCallback as r, replaceSsrResponse as s, renderRouterToStream as t, GLOBAL_TSR as u, createRootRouteWithContext as v, crossSerializeStream as w, useRouter as x, Link as y, createSieveCache as z };
+export { getScriptPreloadAttrs as A, isDangerousProtocol as B, crossSerializeStream as C, toCrossJSONStream as D, toCrossJSONAsync as E, _getRenderedMatches as F, isNotFound as G, dehydrateSsrMatchId as H, executeRewriteInput as I, invariant as L, resolveManifestAssetLink as M, resolveManifestCssLink as N, createInlineCssPlaceholderAsset as O, waitForReason as P, createSieveCache as R, createStream as S, isStream as T, isRedirect as U, isPromise as V, rootRouteId as W, createFileRoute as _, isSsrResponse as a, useRouter as b, stripSsrResponseBody as c, Scripts as d, HeadContent as f, lazyRouteComponent as g, Outlet as h, disposeSsrResponse as i, getStylesheetHref as j, createInlineCssStyleAsset as k, createHydrationScripts as l, createRouter as m, bindSsrResponseToRequest as n, normalizeSsrResponse as o, RouterProvider as p, defineHandlerCallback as r, replaceSsrResponse as s, renderRouterToStream as t, GLOBAL_TSR as u, createRootRouteWithContext as v, fromJSON as w, createPlugin as x, Link as y, decodePath as z };

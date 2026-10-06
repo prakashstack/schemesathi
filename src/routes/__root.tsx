@@ -12,7 +12,6 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportRuntimeError } from "../lib/error-reporting";
 import { Layout } from "@/components/Layout";
-import { I18nProvider } from "@/hooks/useI18n";
 import { LocalStateProvider } from "@/hooks/useLocalState";
 
 function NotFoundComponent() {
@@ -79,11 +78,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SchemeSathi — Find Government Schemes You May Be Eligible For" },
-      { name: "description", content: "Independent platform to discover Central and Gujarat government schemes and check eligibility in your browser. Free, no login." },
+      { title: "Nearby Explorer — Discover Places Around You" },
+      { name: "description", content: "Discover nearby restaurants, hotels, resorts, cafes and tourist attractions based on your location." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "theme-color", content: "#2f3fb0" },
+      { name: "theme-color", content: "#15616d" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -119,13 +118,11 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <I18nProvider>
-        <LocalStateProvider>
-          <Layout>
-            <Outlet />
-          </Layout>
-        </LocalStateProvider>
-      </I18nProvider>
+      <LocalStateProvider>
+        <Layout>
+          <Outlet />
+        </Layout>
+      </LocalStateProvider>
     </QueryClientProvider>
   );
 }

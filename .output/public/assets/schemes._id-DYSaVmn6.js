@@ -1,1 +1,0 @@
-import{r as e}from"./useRouter-BOAPZDg1.js";import{t}from"./link-Di3ucnTW.js";var n=e(),r=()=>(0,n.jsxs)(`div`,{className:`mx-auto max-w-xl px-4 py-20 text-center`,children:[(0,n.jsx)(`p`,{children:`Scheme not found.`}),(0,n.jsx)(t,{to:`/schemes`,className:`mt-4 inline-block text-primary underline`,children:`Browse schemes`})]});export{r as notFoundComponent};
