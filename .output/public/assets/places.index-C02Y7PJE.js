@@ -1,0 +1,1 @@
+import{a as e}from"./compass-Bk8skjcs.js";import{t}from"./NearbyPlaces-Bj7G7HAq.js";import{n}from"./Layout-BqJkMzcS.js";var r=e();function i(){return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(n,{title:`Explore nearby places`,subtitle:`Live results from Geoapify Places.`}),(0,r.jsx)(t,{})]})}export{i as component};

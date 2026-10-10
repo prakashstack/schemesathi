@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PlacesIndexRouteImport } from './routes/places.index'
+import { Route as PlacesPlaceIdRouteImport } from './routes/places.$placeId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,34 +29,43 @@ const PlacesIndexRoute = PlacesIndexRouteImport.update({
   path: '/places/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PlacesPlaceIdRoute = PlacesPlaceIdRouteImport.update({
+  id: '/places/$placeId',
+  path: '/places/$placeId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/privacy': typeof PrivacyRoute
+  '/places/$placeId': typeof PlacesPlaceIdRoute
   '/places/': typeof PlacesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/privacy': typeof PrivacyRoute
+  '/places/$placeId': typeof PlacesPlaceIdRoute
   '/places': typeof PlacesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/privacy': typeof PrivacyRoute
+  '/places/$placeId': typeof PlacesPlaceIdRoute
   '/places/': typeof PlacesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/privacy' | '/places/'
+  fullPaths: '/' | '/privacy' | '/places/$placeId' | '/places/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/privacy' | '/places'
-  id: '__root__' | '/' | '/privacy' | '/places/'
+  to: '/' | '/privacy' | '/places/$placeId' | '/places'
+  id: '__root__' | '/' | '/privacy' | '/places/$placeId' | '/places/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PrivacyRoute: typeof PrivacyRoute
+  PlacesPlaceIdRoute: typeof PlacesPlaceIdRoute
   PlacesIndexRoute: typeof PlacesIndexRoute
 }
 
@@ -82,12 +92,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlacesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/places/$placeId': {
+      id: '/places/$placeId'
+      path: '/places/$placeId'
+      fullPath: '/places/$placeId'
+      preLoaderRoute: typeof PlacesPlaceIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PrivacyRoute: PrivacyRoute,
+  PlacesPlaceIdRoute: PlacesPlaceIdRoute,
   PlacesIndexRoute: PlacesIndexRoute,
 }
 export const routeTree = rootRouteImport
